@@ -23,7 +23,7 @@ describe("App Component", () => {
     const store = mockStore({
       Dashboard: {...initialState, loaders: { fetching: true }}
     });
-    render(<Provider store={store}> <App /></Provider>);
+    render(<Provider store={store}><App /></Provider>);
 
     expect(screen.getByTestId("header")).toBeInTheDocument();
     expect(screen.getByTestId("movie-stats")).toBeInTheDocument();

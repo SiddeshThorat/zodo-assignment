@@ -3,6 +3,7 @@ import useFetch from "../../hooks/useFetch";
 import { useDispatch, useSelector } from "react-redux";
 import { setData, setSearchText } from "../../reducers/dashboardReducer/action";
 import { IAppState } from "../../store.type";
+import { useDebounce } from "./useDebounce";
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -21,21 +22,7 @@ interface SearchInputProps {
   onSearch: (query: string) => void;
 }
 
-export function useDebounce<T>(value: T, delay?: number): T {
-  const [debouncedValue, setDebouncedValue] = useState<T>(value)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setDebouncedValue(value), delay || 500)
-
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [value, delay])
-
-  return debouncedValue
-}
-
-const SearchInput: React.FC<SearchInputProps> = ({ placeholder = 'Search...', onSearch }) => {
+export const SearchInput: React.FC<SearchInputProps> = ({ placeholder = 'Search...', onSearch }) => {
   const [query, setQuery] = useState('');
   const debounceText = useDebounce(query, 500)
   const isInitialRender = useRef<boolean>(true)
