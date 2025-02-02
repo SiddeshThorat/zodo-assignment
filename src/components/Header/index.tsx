@@ -11,7 +11,7 @@ const Header = () => {
   }
 
   return (
-  <div className="flex justify-end items-center w-full h-[7vh]">
+  <div className="flex justify-end items-center w-full h-[7vh]" data-testid="header">
     <SearchInput onSearch={handleSubmit} />
   </div>
 )}

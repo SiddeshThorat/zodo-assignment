@@ -1,7 +1,7 @@
 import { SET_LOADERS, SET_DATA, SET_SEARCH_TEXT } from "./action";
 import { IDashboardState } from "./type";
 
-const initialState: IDashboardState = {
+export const initialState: IDashboardState = {
   loaders: {
     fetching: false
   },

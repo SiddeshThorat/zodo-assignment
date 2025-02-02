@@ -39,7 +39,7 @@ const CardsSection = () => {
   }, [searchText, data])
 
   return (
-  <div ref={scrollableContainer} className="h-[85vh] flex justify-between items-start w-full overflow-scroll">
+  <div ref={scrollableContainer} className="h-[85vh] flex justify-between items-start w-full overflow-scroll" data-testid="cards-section">
     <MovieGrid movies={filteredMovies} fetching={fetching} />
   </div>
 )}
