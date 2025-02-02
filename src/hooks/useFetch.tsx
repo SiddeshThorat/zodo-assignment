@@ -26,7 +26,7 @@ const useFetch = () => {
           currentPage: 1,
           totalPages: responseData.total_pages 
         }))
-      }, 2000)
+      }, 1000)
     } catch (error) {
       dispatch(setLoaders({ loadername: 'fetching', status: false }))
     }
